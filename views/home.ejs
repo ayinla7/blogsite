@@ -1,0 +1,27 @@
+<%- include('partials/header') -%>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+<link rel="stylesheet" href="css/bootstrap.min.css">                                      <!-- Bootstrap style -->
+<link rel="stylesheet" href="css/templatemo-style.css">                                   <!-- Templatemo style -->
+  <!-- <h1>Home</h1> -->
+
+  <div class="tm-home-img-container">
+    <img src="img/tm-contact-img.jpg" alt="Image" class=" img-fluid">
+  </div>
+
+  <p> <%= c1 %></p>
+
+  <% if(posts.length > 0){
+    for(var i=0; i<posts.length; i++){ %>
+      <h1> <%= posts[i].topic %> </h1>
+      <h6>
+        <%= posts[i].post.substring(0,100) + " ..." %>
+        <a href="/posts/<%= posts[i].topic %> " style="color:#1abc9c;"> Read more</a>
+      </h6>
+
+    <% }
+  }else{ %>
+    <p style="color:red">0 Post to diplay!</p>
+  <% }
+  %>
+<%- include('partials/footer') -%>

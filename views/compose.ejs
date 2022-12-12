@@ -1,0 +1,31 @@
+<%- include('partials/header') -%>
+
+<div class="tm-home-img-container">
+  <img src="img/tm-about-img.jpg" alt="Image" class=" img-fluid">
+</div>
+ 
+<div class="container-fluid">
+    <div class="row">
+      
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <h1>Compose</h1>
+          <p class="tm-form-description">Vivamus accumsan blandit ligula. Sed lobortis efficitur sapien. Quisque vel sem eu turpis ullamcorper euismod. Praesent quis nisi ac augue luctus viverra. Sed et dui nisi. Fusce vitae dapibus justo.</p> 
+            <section>
+                <form action="/compose" method="post" class="tm-contact-form">                                
+                    <div class="form-group">
+                        <input type="text" id="topic" name="topic" class="form-control" placeholder="Topic"  required/>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="post" name="post" class="form-control" rows="6" placeholder="Post" required></textarea>
+                    </div>
+                
+                    <button type="submit" class="tm-btn" name="button" style="float: right; background-color: #1abc9c;">Publish</button>                          
+                </form>   
+            </section>
+          </div>
+        </div>
+      </div>
+          
+
+<%- include('partials/footer') -%>
