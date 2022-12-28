@@ -24,9 +24,7 @@ app.use(express.static("public"));
 
 // mongoose.connect("mongodb://localhost:27017/blogDB", {useNewUrlParser: true});
 
-mongoose.connect("mongodb+srv://admin:Kwamxzdyn1596..@cluster0.c6whosx.mongodb.net/blogDB", {useNewUrlParser: true});
-
-
+mongoose.connect("mongodb+srv://admin:admin1@cluster0.c6whosx.mongodb.net/blogDB", {useNewUrlParser: true});
 
 const postSchema = {
   title: String,
@@ -51,7 +49,7 @@ app.get("/about",function(req, res){
 });
 
 app.get("/contact",function(req, res){
-  res.render("Contact", {c3:contactContent});
+  res.render("contact", {c3:contactContent});
 });
 
 app.get("/compose",function(req, res){
