@@ -55,7 +55,7 @@ app.get("/contact",function(req, res){
 });
 
 app.get("/compose",function(req, res){
-  res.render("Compose");
+  res.render("compose");
 });
 
 app.post("/compose", function(req, res){
@@ -73,7 +73,6 @@ app.post("/compose", function(req, res){
     title: req.body.postTitle,
     content: req.body.postBody
   });
-
 
   post.save(function(err){
     if (!err){
