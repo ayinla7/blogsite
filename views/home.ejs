@@ -9,16 +9,16 @@
     <img src="img/tm-contact-img.jpg" alt="Image" class=" img-fluid">
   </div>
 
-  <p> <%= c1 %></p>
+  <p style="font-family:Open Sans, Monaco; text-align: justify; line-height: 1.5;"> <%= c1 %></p>
 
   <% if(posts.length > 0){
     posts.forEach(function(post){ %>
-      <h1> <%= post.title %> </h1>
-      <h6>
-        <%= post.content.substring(0,100) + " ..." %>
-        <a href="/posts/<%= post._id%> " style="color:#1abc9c;"> Read more</a>
+      <h2 style="font-family:Open Sans, Monaco;"> <%= post.title %> </h2>
+      <h6 style="font-family:Open Sans, Monaco; text-align: justify; line-height: 1.5;">
+        <%= post.content.substring(0,350) + " ..." %>
+        <a href="/posts/<%= post._id %> " style="color:#1abc9c; font-family:Open Sans, Monaco; "> Read more</a>
       </h6>
-
+      <br>
     <% })
   }else{ %>
     <p style="color:red">0 Post to diplay!</p>
