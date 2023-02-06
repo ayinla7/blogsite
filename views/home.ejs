@@ -1,26 +1,51 @@
 <%- include('partials/header') -%>
-
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+<link rel="stylesheet" href="style.css">
+<title>Article Page</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
 <link rel="stylesheet" href="css/bootstrap.min.css">                                      <!-- Bootstrap style -->
 <link rel="stylesheet" href="css/templatemo-style.css">                                   <!-- Templatemo style -->
-  <!-- <h1>Home</h1> -->
+  <div class="container">
 
-  <div class="tm-home-img-container">
-    <img src="img/tm-contact-img.jpg" alt="Image" class=" img-fluid">
+    <div class="blog">
+
+      <div class="left">
+        <img src="https://picsum.photos/480/280?random=1" alt=""/>
+        <div class="articles">
+          
+          <div class="row">
+
+            <% if(posts.length > 0){
+              posts.forEach(function(post){ %>
+            <div class="col-sm-4">
+              <div class="article">
+                <h3 style="text-transform: uppercase;"> <%= post.title %> </h3>
+                <p style="text-align: justify; line-height: 1.5;">
+                  <%= post.content.substring(0,100)+"... "%><a href="/posts/<%= post._id %> " style="color:#2a5da9; font-family:Open Sans, Monaco; ">read more</a>
+                </p>
+                <!-- <button class="btn">Read more</button> -->
+              </div>
+            </div>
+            <br>
+              <% })
+            }else{ %>
+              <p style="color:red">0 Post to diplay!</p>
+            <% }
+            %>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <h3>Party Jokes Startling But Unnecessary</h3>
+        <p>life is a journey of twists and turns, peaks and valleys, mountains to climb and oceans to explore.</p>
+        <button class="btn">Read more</button>
+      </div>
+      
+    </div>
   </div>
-
-  <p style="font-family:Open Sans, Monaco; text-align: justify; line-height: 1.5;"> <%= c1 %></p>
-
-  <% if(posts.length > 0){
-    posts.forEach(function(post){ %>
-      <h2 style="font-family:Open Sans, Monaco; text-transform: uppercase;"> <%= post.title %> </h2>
-      <h6 style="font-family:Open Sans, Monaco; text-align: justify; line-height: 1.5;">
-        <%= post.content.substring(0,350) + " ..." %>
-        <a href="/posts/<%= post._id %> " style="color:#1abc9c; font-family:Open Sans, Monaco; "> Read more</a>
-      </h6>
-      <br>
-    <% })
-  }else{ %>
-    <p style="color:red">0 Post to diplay!</p>
-  <% }
-  %>
